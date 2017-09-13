@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>Canvas Basic</title>
+    
+    </head>
+
+
+
+<body>
+    
+    <canvas id="c1" width="400"  height="400" onclick="draw(event)"> </canvas>
+    
+    
+    <script>
+    
+    document.onkeydown = processKeys;
+    
+    
+    var Xint = 200;
+    var yInt = 200;
+    
+    // 1 - get the canvas object
+    
+   
+    var canvas = document.getElementById('c1');
+    
+    // 2 - Get the context object
+    
+    var context = canvas.getContext('2d');
+    
+    
+    context.fillStyle = "green";
+    
+    context.fillRect(0,0,canvas.width, canvas.height);
+    
+    context.fillStyle = "yellow";
+    
+    context.fillRect(50,100,50,50);
+    
+    context.fillRect(Xint,yInt,20,20);
+    
+    // x + width
+    // h + height
+    
+    
+    // x range (50 - 100 )
+    // y range = (100 - 150)
+    
+    
+    // Draw a line
+    
+    context.strokeStyle = "yellow";
+    context.moveTo(0,0);
+    context.lineTo(200,200);
+    context.stroke();
+    
+ 
+    function draw(event)
+    {
+        
+        var x = event.offsetX;
+        var y = event.offsetY;
+        
+        var canvas = document.getElementById('c1');
+        
+        // 2 - Get the context object
+        
+        var context = canvas.getContext('2d');
+        
+        
+        context.fillStyle = "red";
+        
+        context.fillRect(x-10,y-10,20, 20);
+        
+        
+        if ((x >= 50 && x <= 100) && (y >= 100 && y <= 150))
+        {
+            
+                alert("Got the monster");
+        }
+        
+    
+        
+        
+    }
+    
+    function processKeys(e)
+    {
+        e = e || window.event;
+        
+     //   alert("key value " + e.keyCode);
+        
+        if (e.keyCode == 37)
+        {
+            // pressed left key
+            
+            Xint = Xint - 20 ;
+        }
+        
+        if (e.keyCode == 39)
+        {
+            // pressed right key
+             Xint = Xint + 20 ;
+        }
+        
+        if (e.keyCode == 38)
+        {
+            
+             yInt = yInt - 20 ;
+            // pressed up key
+        }
+        
+        if (e.keyCode == 40)
+        {
+            yInt = yInt + 20 ;
+            // pressed down key
+        }
+        
+        
+        
+        var canvas = document.getElementById('c1');
+        
+        // 2 - Get the context object
+        
+        var context = canvas.getContext('2d');
+        
+        
+       context.fillStyle = "green";
+        
+       context.fillRect(0,0,canvas.width, canvas.height);
+        
+       
+        context.fillStyle = "yellow";
+        
+        context.fillRect(Xint,yInt,20,20);
+        
+        
+        
+        
+    }
+
+
+
+  
+    </script>
+    
+</body>
+</html>
