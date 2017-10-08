@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>Canvas Basic</title>
+    
+    </head>
+
+
+
+<body>
+    
+    <canvas id="c1" width="600"  height="600"> </canvas>
+    
+    
+    <script>
+    
+    document.onkeydown = processKeys;
+    
+    
+    var Xint = 200;
+    var yInt = 200;
+    
+    // 1 - get the canvas object
+    
+   
+   drawGame();
+ 
+ 
+    
+    function processKeys(e)
+    {
+        e = e || window.event;
+        
+     //   alert("key value " + e.keyCode);
+        
+        if (e.keyCode == 37)
+        {
+            // pressed left key
+            
+            Xint = Xint - 20 ;
+        }
+        
+        if (e.keyCode == 39)
+        {
+            // pressed right key
+             Xint = Xint + 20 ;
+        }
+        
+        if (e.keyCode == 38)
+        {
+            
+             yInt = yInt - 20 ;
+            // pressed up key
+        }
+        
+        if (e.keyCode == 40)
+        {
+            yInt = yInt + 20 ;
+            // pressed down key
+        }
+        
+        
+        drawGame();
+        
+        
+        
+    }
+
+
+
+    function drawGame()
+    {
+        
+        var canvas = document.getElementById('c1');
+        
+        // 2 - Get the context object
+        
+        var context = canvas.getContext('2d');
+        
+        
+        context.fillStyle = "green";
+        
+        context.fillRect(0,0,canvas.width, canvas.height);
+        
+        context.fillStyle = "yellow";
+        
+        // Object 1
+        context.fillRect(100,100,200,50);
+        
+        // Object 2
+        context.fillRect(100,400,200,50);
+        
+        // Me
+        context.fillStyle = "pink";
+        context.fillRect(Xint,yInt,20,20);
+        
+        
+        
+    }
+
+  
+    </script>
+    
+</body>
+</html>
