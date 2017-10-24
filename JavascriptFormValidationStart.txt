@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java Script Form Validation </title>
+
+
+</head>
+
+
+<body>
+
+
+<form action="" >
+
+  Owner Name :<br>
+  <input type="text" id="oname" name="oname" placeholder="Enter Name"  >
+  <br>
+  <br>
+  Room Width:<br>
+  <input type="text" id="width" name="width" placeholder="Enter a number" >
+  <br>
+  Room Length:<br>
+  <input type="text" id="length" name="length" placeholder="Enter a number" >
+  <br><br>
+  <input type="submit" value="area">
+</form> 
+
+<p id="out1">  </p>
+
+
+
+
+<script>
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
